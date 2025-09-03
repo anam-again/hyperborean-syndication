@@ -51,7 +51,8 @@ export default function RootLayout({
       lang="en"
       className={cx(
         GeistSans.variable,
-        GeistMono.variable
+        GeistMono.variable,
+        "scroll-smooth"
       )}
     >
       <body>

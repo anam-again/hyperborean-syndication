@@ -1,3 +1,3 @@
 ```bash
-pnpm dev
+npm run dev
 ```
