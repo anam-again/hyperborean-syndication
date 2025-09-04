@@ -17,7 +17,7 @@ export default function Index() {
       <div className="lg:flex lg:justify-between lg:gap-4">
         <header className="lg:sticky lg:top-0 lg:flex lg:w-[48%] lg:flex-col lg:max-w-xl lg:h-fit mt-8">
           <AppearTransitionComponent delay={500}>
-            <div className="lg:mt-8 hover:bg-slate-300 bg-slate-200 border lg:px-8  lg:py-16 sm:p-4">
+            <div className="lg:mt-8 hover:bg-slate-300 bg-slate-200 border px-8 py-8 lg:py-16 sm:p-4">
               <div>
                 <h1 className="text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">Joshua Petersen</h1>
                 <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-800 sm:text-xl">Software/Frontend Engineer</h2>
@@ -89,7 +89,7 @@ export default function Index() {
 
         </main>
       </div>
-      <div className="mt-8">
+      <div className="mt-16">
         <FullWidthStickyTab id={SECTION_IDS.PROJECTS}>
           Projects
         </FullWidthStickyTab>

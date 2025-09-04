@@ -25,7 +25,7 @@ interface ImageProjectCardProps extends ProjectCardType {
 const InternalProjectCard = (props: InternalProjectCardProps) => {
     return (
         <AppearTransitionComponent>
-        <div className="w-2xl h-60 grid grid-flow-col grid-cols-5 [&_h1]:hover:text-slate-950">
+        <div className="w-full md:w-2xl h-60 grid grid-flow-col grid-cols-5 [&_h1]:hover:text-slate-950">
             {props.left}
             <div className="border col-span-3 p-4">
                 <h1 className="text-slate-600 text-xs"><b><Link className="text-red-800 active:text-red-200 hover:text-red-500" href={props.linkTo}>{props.title}</Link></b></h1>
