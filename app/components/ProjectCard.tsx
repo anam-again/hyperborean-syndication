@@ -25,18 +25,18 @@ interface ImageProjectCardProps extends ProjectCardType {
 const InternalProjectCard = (props: InternalProjectCardProps) => {
     return (
         <AppearTransitionComponent>
-        <div className="w-full md:w-2xl h-60 grid grid-flow-col grid-cols-5 [&_h1]:hover:text-slate-950">
+        <div className="w-full md:w-2xl h-60 max-h-xxl grid grid-flow-col grid-cols-5 [&_h1]:hover:text-slate-950">
             {props.left}
             <div className="border col-span-3 p-4">
                 <h1 className="text-slate-600 text-xs"><b><Link className="text-red-800 active:text-red-200 hover:text-red-500" href={props.linkTo}>{props.title}</Link></b></h1>
                 <div className="h-full text-slate-800 text-sm [&_p]:indent-5 p-4 flex flex-col justify-between">
-                    <div>
+                    <div className="text-xs md:text-sm">
                         {props.children}
                     </div>
                     <ul className="mb-2 flex flex-wrap">
                         {props.tags.map((tag) => {
                             return (
-                                <li className="mr-1.5 mt-2" > <div className="flex items-center px-3 py-1 text-xs font-medium leading-5 border" > {tag} </div></li >
+                                <li className="mr-1.5 mt-2" > <div className="flex items-center px-2 py-.5 text-xs font-medium leading-5 border" > {tag} </div></li >
                             )
                         })}
                     </ul>
