@@ -7,9 +7,13 @@ import { ReactNode } from "react";
 
 interface Props {
     children: ReactNode;
+    delay?: number;
 }
 
-const AppearTransitionComponent = (props: Props) => {
+const AppearTransitionComponent = ({
+    children,
+    delay = 0,
+}: Props) => {
     const elemRef = useRef<HTMLDivElement>(null);
 
     const [isIntersecting, setIntersecting] = useState(false);
@@ -31,8 +35,8 @@ const AppearTransitionComponent = (props: Props) => {
     }, [elemRef]);
 
     return (
-        <div ref={elemRef} className={`transition-opacity ease-in duration-200 ${isIntersecting ? "opacity-100" : "opacity-0"}`}>
-            {props.children}
+        <div ref={elemRef} className={`transition-opacity ease-in md:delay-${delay} duration-200 ${isIntersecting ? "opacity-100" : "opacity-0"}`}>
+            {children}
         </div>
     )
 }

@@ -16,7 +16,7 @@ export default function Index() {
     <section className="min-h-screen bg-slate-50 mx-auto max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0 text-slate-950">
       <div className="lg:flex lg:justify-between lg:gap-4">
         <header className="lg:sticky lg:top-0 lg:flex lg:w-[48%] lg:flex-col lg:max-w-xl lg:h-fit mt-8">
-          <AppearTransitionComponent>
+          <AppearTransitionComponent delay={500}>
             <div className="lg:mt-8 hover:bg-slate-300 bg-slate-200 border lg:px-8  lg:py-16 sm:p-4">
               <div>
                 <h1 className="text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">Joshua Petersen</h1>
@@ -40,12 +40,10 @@ export default function Index() {
 
         <main className="pt-24 lg:w-[52%] lg:py-24">
 
-          <AppearTransitionComponent>
-            <FullWidthStickyTab id={SECTION_IDS.ABOUT}>
-              About
-            </FullWidthStickyTab>
-          </AppearTransitionComponent>
-          <AppearTransitionComponent>
+          <FullWidthStickyTab id={SECTION_IDS.ABOUT}>
+            About
+          </FullWidthStickyTab>
+          <AppearTransitionComponent delay={700}>
             <div className="mb-16 lg:mb-8 lg:max-w-xl lg:border hover:lg:bg-slate-100 p-6">
               Hello! <b>ᕙ(‾̀◡‾́)ᕗ</b> I am a <b>Software Engineer</b> with three years of experience. I got into this field due to my interest in <b>user experiences</b> and making <b>performant</b> and <b>useful</b> technologies.
               <br /> <br /> I recently got back from one and a half years of thru-hiking and international travelling and am now seeking a long-term Software Engineering position.
@@ -53,11 +51,9 @@ export default function Index() {
             </div>
           </AppearTransitionComponent>
 
-          <AppearTransitionComponent>
-            <FullWidthStickyTab id={SECTION_IDS.EXPERIENCE}>
-              Experience
-            </FullWidthStickyTab>
-          </AppearTransitionComponent>
+          <FullWidthStickyTab id={SECTION_IDS.EXPERIENCE}>
+            Experience
+          </FullWidthStickyTab>
 
           <MainExperienceCard dates="2024 - Present" title="Thru-Hiking" tags={["Soft Skills"]}>
             <div>
