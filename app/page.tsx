@@ -4,6 +4,7 @@ import MainExperienceCard from "./components/MainExperienceCard";
 import { ImageProjectCard, YoutubeProjectCard } from "./components/ProjectCard";
 import AppearTransitionComponent from "./components/AppearTransitionComponent";
 import SVGIconElement from "./components/SVGIconElement";
+import RedLink from "./components/RedLink";
 
 const SECTION_IDS = {
   ABOUT: "ABOUT",
@@ -57,27 +58,27 @@ export default function Index() {
 
           <MainExperienceCard dates="2024 - Present" title="Thru-Hiking" tags={["Soft Skills"]}>
             <div>
-              I've spent this time thru-hiking the <a className="text-red-800 active:text-red-200 hover:text-red-500" href="https://en.wikipedia.org/wiki/Pacific_Crest_Trail" >Pacific Crest Trail</a>,
-              the <a className="text-red-800 active:text-red-200 hover:text-red-500" href="https://en.wikipedia.org/wiki/Shikoku_Pilgrimage" >Shikoku Henro</a>,
-              the <a className="text-red-800 active:text-red-200 hover:text-red-500" href="https://en.wikipedia.org/wiki/Portuguese_Way" >Camino Portugues</a>,
-              the <a className="text-red-800 active:text-red-200 hover:text-red-500" href="https://en.wikipedia.org/wiki/Camino_Primitivo" >Camino Primitivo</a>,
-              and the <a className="text-red-800 active:text-red-200 hover:text-red-500" href="https://en.wikipedia.org/wiki/French_Way" >Camino Frances</a>.
+              I've spent this time thru-hiking the <RedLink href="https://en.wikipedia.org/wiki/Pacific_Crest_Trail" >Pacific Crest Trail</RedLink>,
+              the <RedLink href="https://en.wikipedia.org/wiki/Shikoku_Pilgrimage" >Shikoku Henro</RedLink>,
+              the <RedLink href="https://en.wikipedia.org/wiki/Portuguese_Way" >Camino Portugues</RedLink>,
+              the <RedLink href="https://en.wikipedia.org/wiki/Camino_Primitivo" >Camino Primitivo</RedLink>,
+              and the <RedLink href="https://en.wikipedia.org/wiki/French_Way" >Camino Frances</RedLink>.
               <br /> <br /> Over the winter I lived in Berlin.
             </div>
           </MainExperienceCard>
 
           <MainExperienceCard dates="2022 - 2024" title="Amazon ; Frontend Engineer I (AWS)" tags={["Typescript", "AWS", "CDK/LPT", "React"]}>
             <div>
-              I worked on the platform team of Sagemaker to integrate partner teams, as well as build out the Core UI of the Sagemaker Product.
+              I worked on the platform team of <RedLink href="https://aws.amazon.com/sagemaker/">Sagemaker</RedLink> to integrate partner teams, as well as build out the Core UI of the Sagemaker Product.
               <br /> <br /> I worked on many disparate aspects of the product and became very skilled at working on an exceptionally fast-moving codebase, with fast-moving organizations and fast-moving requirements.
               <br /> <br /> My largest project was automating the region build process for our legacy/current deployments of Sagemaker, and then onboarding partner teams to the new system.
             </div>
           </MainExperienceCard>
 
-          <MainExperienceCard dates="2021 - 2022" title="Microsoft ; Business Intelligence Contractor" tags={["Kusteau", "Power BI", "Databases"]}>
+          <MainExperienceCard dates="2021 - 2022" title="Microsoft ; Business Intelligence Contractor" tags={["Kusto", "Power BI", "Databases"]}>
             <div>
-              At Microsoft I wrote Queries for Business Intelligence in the proprietary Kusteau language.
-              <br /> <br /> These were rolled into Power BI slides and were regularly used in high-level Azure Infrastructure meetings.
+              At Microsoft I wrote Queries for Business Intelligence using <RedLink href="https://learn.microsoft.com/en-us/kusto/">Kusto</RedLink>.
+              <br /> <br /> These were rolled into <RedLink href="https://www.microsoft.com/en-us/power-platform/products/power-bi">Power BI</RedLink> slides and were regularly used in high-level Azure Infrastructure meetings.
               <br /> <br /> I also was able to set up dashboards to automate some of the repetetive parts of this.
             </div>
           </MainExperienceCard>
