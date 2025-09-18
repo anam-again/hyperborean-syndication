@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
-import React from 'react'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -66,19 +65,21 @@ function slugify(str) {
 
 function createHeading(level) {
   const Heading = ({ children }) => {
-    let slug = slugify(children)
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement('a', {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: 'anchor',
-        }),
-      ],
-      children
-    )
+    let slug = slugify(children);
+    switch (level) {
+      case 1:
+        return <h1 id={slug}>{children}</h1>
+      case 2:
+        return <h2 id={slug}>{children}</h2>
+      case 3:
+        return <h3 id={slug}>{children}</h3>
+      case 4:
+        return <h4 id={slug}>{children}</h4>
+      case 5:
+        return <h5 id={slug}>{children}</h5>
+      case 6:
+        return <h6 id={slug}>{children}</h6>
+    }
   }
 
   Heading.displayName = `Heading${level}`
