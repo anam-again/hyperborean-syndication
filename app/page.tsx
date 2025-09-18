@@ -5,11 +5,13 @@ import { ImageProjectCard, YoutubeProjectCard } from "./components/ProjectCard";
 import AppearTransitionComponent from "./components/AppearTransitionComponent";
 import SVGIconElement from "./components/SVGIconElement";
 import RedLink from "./components/RedLink";
+import { BlogPosts } from "./components/Posts";
 
 const SECTION_IDS = {
   ABOUT: "ABOUT",
   EXPERIENCE: "EXPERIENCE",
   PROJECTS: "PROJECTS",
+  BLOG: "BLOG"
 }
 
 export default function Index() {
@@ -26,8 +28,8 @@ export default function Index() {
               </div>
               <nav className="nav lg:block">
                 <ul className="mt-8 w-max">
-                  {[["01. About", SECTION_IDS.ABOUT], ["02. Experience", SECTION_IDS.EXPERIENCE], ["03. Projects", SECTION_IDS.PROJECTS]].map(([text, id]) => {
-                    return <li><Link className="text-red-800 active:text-red-200 hover:text-red-500" href={`#${id}`}>{text}</Link></li>
+                  {[["01. About", SECTION_IDS.ABOUT], ["02. Experience", SECTION_IDS.EXPERIENCE], ["03. Blog", SECTION_IDS.BLOG], ["04. Projects", SECTION_IDS.PROJECTS]].map(([text, id]) => {
+                    return <li key={id}><Link className="text-red-800 active:text-red-200 hover:text-red-500" href={`#${id}`}>{text}</Link></li>
                   })}
                 </ul>
               </nav>
@@ -89,6 +91,16 @@ export default function Index() {
           </MainExperienceCard>
 
         </main>
+      </div>
+      <div className="mt-16">
+        <FullWidthStickyTab id={SECTION_IDS.BLOG}>
+          Blog
+        </FullWidthStickyTab>
+        <div className="flex flex-col w-full mt-2">
+          <div className="self-center lg:w-4xl w-full">
+            <BlogPosts />
+          </div>
+        </div>
       </div>
       <div className="mt-16">
         <FullWidthStickyTab id={SECTION_IDS.PROJECTS}>

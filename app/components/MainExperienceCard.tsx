@@ -23,7 +23,7 @@ const MainExperienceCard = (props: Props) => {
                     <ul className="mt-2 flex flex-wrap" >
                         {props.tags.map((tag) => {
                             return (
-                                <li className="mr-1.5 mt-2" > <div className="flex items-center px-3 py-1 text-xs font-medium leading-5 border" > {tag} </div></li >
+                                <li key={tag} className="mr-1.5 mt-2" > <div className="flex items-center px-3 py-1 text-xs font-medium leading-5 border" > {tag} </div></li>
                             )
                         })}
                     </ul>

@@ -36,7 +36,7 @@ const InternalProjectCard = (props: InternalProjectCardProps) => {
                     <ul className="mb-2 flex flex-wrap">
                         {props.tags.map((tag) => {
                             return (
-                                <li className="mr-1.5 mt-2" > <div className="flex items-center px-2 py-.5 text-xs font-medium leading-5 border" > {tag} </div></li >
+                                <li key={tag} className="mr-1.5 mt-2" > <div className="flex items-center px-2 py-.5 text-xs font-medium leading-5 border" > {tag} </div></li >
                             )
                         })}
                     </ul>

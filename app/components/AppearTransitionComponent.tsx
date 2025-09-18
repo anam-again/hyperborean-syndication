@@ -19,7 +19,6 @@ const AppearTransitionComponent = ({
     const [isIntersecting, setIntersecting] = useState(false);
 
     useEffect(() => {
-        console.log('asdf')
         if (elemRef.current === null) return;
         const observer = new IntersectionObserver(([entry]) => {
             setIntersecting(entry.isIntersecting)

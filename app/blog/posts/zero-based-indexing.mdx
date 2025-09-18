@@ -1,0 +1,74 @@
+---
+title: 'Why do we use Zero Based Indexing anyways?'
+publishedAt: '2025-09-17'
+summary: 'A simple rule for deciding if you should use Zero or One based indexing.'
+---
+
+## Some background
+
+One thing that regularly perplexes beginner programmers is why arrays in many languages are often indexed starting at zero. See these below (approximate) comparisons between C++ and Python for arrays of size 3.
+
+
+##### Cpp
+```cpp
+main() {
+    int my_numbers[3] = {5, 10, 15};
+    print(my_numbers[0]); // The first value is at 0.
+    print(my_numbers[1]);
+    print(my_numbers[2]);
+}
+```
+##### Python
+```python
+function fun():
+    my_numbers = [5, 10, 15]
+    print(my_numbers[1]) // The first value is at 1,
+    print(my_numbers[2])
+    print(my_numbers[3]) // and the final value is at 3
+```
+
+Counting items may seem intuitive if you've spent a lot of time as a computer programmer, but it is not something that makes sense in our normal operating world.
+
+If I were at the grocery store and I'm counting apples in my shopping cart, I don't have 'zero apples' when there is an apple in my shopping cart, it would be very intuitive to say that I have one Apple in this case.
+
+If I were counting in the computer programmer way, when there is an apple in my shopping cart, I would have 'zero apples', and if there is no apples in my shopping cart, I would have... undefined apples? Maybe negative apples? NaN Apples? Very obviously this breaks the way that we think about physical objects.
+
+So then why do we use zero based indexing in computer programming if it doesn't make sense in the physical world?
+
+Well.. surprisingly this does make a lot of sense in the physical world! But you have to reframe how you think about the two terms.
+
+## 1 Based: Items. 0 Based: The Position of Items
+
+You should use 1 Based Indexing when you're counting items, and you should use 0 Based Indexing when you're talking about the position of items.
+
+For example, if I'm measuring a six inch length of wood with a tape measure, the measurement begins at zero, which is the very base of the length of wood. See the below image.
+
+![Zero Based Indexing Image](/blog/zero-based-indexing.jpg)
+
+In blue on the bottom is zero based indexing, if we were to use a tape measure, the measurement would start at zero at the very far left, and would end at six at the very end of the board (not shown in the image).
+
+The red at the top of the image refers to one based indexing, and we can see that each of the numbers refers to the individual inches, or you could say that it refers to the length between positions on the board. For example the One Based 3 refers to the length between Zero based 2 and 3.
+
+When we use zero based indexing, our numbers refer to individual points, while one based indexes refer to the items in between the points.
+
+In fact, when we're using code such as `my_numbers[0]`, we aren't referring to the `integer` at `0`, we are referring to the block of memory that starts at position `0`. This is why we use zero based in computer programming, because we aren't referring to the block of memory, but rather to the position in memory where the block begins. It is an address!
+
+Another way to rephrase all of this is that zero based indexing is used when you're measuring items, and one based indexing is used when you are counting items.
+
+## Some more examples
+
+As another real world example, people are often confused why we are in the 21st century and not the 20th century. The year is 20XX not 21XX, so why would we call it 21?
+This is because centuries use One based indexing, and the 'items' in this case are 100 year blocks.
+
+If it were the year 50 AD, people would probably be pretty hesitant to call it the 0'th century... Especially since Zero hadn't been invented yet!
+
+
+Here are some things that are one based:
+- Counting apples
+- Counting what lap of a running track you're currently on
+- Counting Centuries
+
+
+Here are some things that are zero based:
+- Measuring a block of wood
+- Measuring how many lengths of track you've finished
