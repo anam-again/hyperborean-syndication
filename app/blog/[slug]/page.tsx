@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { baseUrl } from 'app/sitemap'
 import { formatDate, getBlogPosts } from '../utils'
 import { CustomMDX } from 'app/components/mdx'
+import RedLink from 'app/components/RedLink'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -82,22 +83,32 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+      <div className='flex justify-center p-8'>
+        <RedLink href='/'>Return to Home</RedLink>
       </div>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {post.metadata.summary}
-        </p>
+      <div className='w-full flex flex-row justify-center'>
+        <div className='w-full md:w-4xl px-8'>
+          <h1 className="title font-semibold text-2xl tracking-tighter">
+            {post.metadata.title}
+          </h1>
+          <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {formatDate(post.metadata.publishedAt)}
+            </p>
+          </div>
+          <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {post.metadata.summary}
+            </p>
+          </div>
+          <article className="prose">
+            <CustomMDX source={post.content} />
+          </article>
+        </div>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
+      <div className='flex justify-center p-8'>
+        <RedLink href='/'>Return to Home</RedLink>
+      </div>
     </section>
   )
 }
